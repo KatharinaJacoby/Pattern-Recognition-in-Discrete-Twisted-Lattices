@@ -86,17 +86,25 @@ While the data strongly suggests a relationship to $\sqrt{2}$, it remains an ope
 ## 4. Discussion
 
 ### 4.1 The Nature of the "Perfect" Constants
-The initial appearance of "perfect" constants ($3/5\pi$, $80/199\pi$) in the March 2026 report appears to be a cautionary example of grid quantization. The coarse search grid (step size 0.05) likely aligned with the true $K_c$ values in a manner that produced rational approximations indistinguishable from exact constants at low precision. The high-resolution re-evaluation was necessary to reveal the underlying, slightly drifting numerical behavior.
+The initial appearance of "perfect" constants ($3/5\pi$, $80/199\pi$) in the March 2026 report appears to be a cautionary example of grid quantization. The coarse search grid (step size 0.05) likely aligned with the true $K_c$ values in a manner that produced rational approximations indistinguishable from exact constants at low precision. The high-resolution re-evaluation was necessary to reveal the underlying, slightly drifting numerical behavior, confirming that these "constants" were artifacts of the search methodology rather than intrinsic physical properties. This highlights the necessity of tolerance-based binary searches when investigating discrete systems where grid alignment can mimic mathematical exactness.
 
-### 4.2 Interpretation of $\lfloor L/2 \rfloor$
-The observed dependence on $\lfloor L/2 \rfloor$ suggests that the discrete grid "perceives" the twist boundary at a halved resolution relative to the full lattice dimension $L$. This may relate to the number of distinct distance shells available under the anti-periodic boundary condition, though a theoretical derivation is currently lacking.
+### 4.2 Interpretation of $\lfloor L/2 \rfloor$ and Grid Constraints
+The observed dependence on $\lfloor L/2 \rfloor$ suggests that the discrete grid perceives the twist boundary at a halved resolution relative to the full lattice dimension $L$. This observation aligns with known constraints in lattice field theory, where the maximum representable momentum (the Nyquist limit) is bounded by $\lfloor L/2 \rfloor$ to avoid aliasing and "ghost" modes. 
 
-### 4.3 Limitations
-*   **Simulation Specific:** These observations are derived from a specific implementation of the Discrete Coupled Mode Equations.
-*   **Finite Range:** The largest tested lattice size is $N=1024$.
-*   **Empirical Nature:** The $\lfloor L/2 \rfloor$ dependence and the $\sqrt{2}$ ratio are currently numerical observations. They have not been analytically proven.
-*   **Metric Dependence:** It is unknown whether these patterns persist under different grid metrics (e.g., Euclidean vs. Manhattan).
+In standard twisted boundary condition literature, the $\sqrt{2}$ factor often arises from the vector sum of momentum components in orthogonal directions. Our data suggests that this geometric constraint extends to the **critical curvature** of the system: the effective "length" governing the transition to oscillatory behavior is not the physical perimeter $L$, but the number of distinct, non-aliased distance shells available under the anti-periodic condition, which is $\lfloor L/2 \rfloor$. While the mathematical basis for $\lfloor L/2 \rfloor$ as a momentum cutoff is established, its role as the primary scaling variable for critical curvature in photonic lattices appears to be a specific numerical feature of the CME framework tested here.
 
+### 4.3 The $\sqrt{2}$ Ratio: Geometry vs. Universality
+The consistent ratio of $\approx \sqrt{2}$ between the Klein Bottle and Twisted Torus scaling products mirrors the geometric relationship between the lowest momentum modes in twisted versus periodic 2D lattices. In twisted lattices, the minimal non-zero momentum vector often has a magnitude scaled by $\sqrt{2}$ relative to the periodic case due to the diagonal nature of the twist in momentum space.
+
+However, it remains an open question whether this ratio is a universal constant for all discrete twisted systems or a consequence of the specific nearest-neighbor coupling and square metric used in our CME implementation. The fact that the ratio holds across the tested range ($N=4$ to $N=1024$) suggests a robust geometric origin, but analytical derivation is required to confirm if it persists in the continuum limit or under different coupling schemes.
+
+### 4.4 Limitations and Open Questions
+*   **Simulation Specificity:** These observations are derived from a specific implementation of the Discrete Coupled Mode Equations. Different discretization schemes (e.g., higher-order stencils) or metrics (Euclidean vs. Manhattan) may alter the $\lfloor L/2 \rfloor$ dependence.
+*   **Finite Range:** The largest tested lattice size is $N=1024$. While the $\lfloor L/2 \rfloor$ pattern is stable within this range, the slight drift observed in the Twisted Torus product at larger $N$ warrants investigation at even higher resolutions.
+*   **Analytical Gap:** Currently, there is no analytical proof linking the $\lfloor L/2 \rfloor$ momentum cutoff directly to the critical curvature $K_c$. Establishing this link would require deriving the dispersion relation for the twisted CME and identifying the precise condition for the static-to-oscillatory transition.
+*   **Topological Generality:** It is unknown whether similar scaling patterns emerge in other topological configurations (e.g., Möbius strips or higher-genus surfaces) or in 3D lattices.
+
+This work serves primarily as a descriptive record of these numerical patterns. Future research should focus on bridging the gap between these empirical observations and the theoretical framework of discrete differential geometry to determine the universality of the proposed scaling laws.
 ---
 
 ## 5. Conclusion
