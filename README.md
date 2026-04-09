@@ -1,21 +1,80 @@
 # Pattern Recognition in Discrete Twisted Lattices
-## A Descriptive Study of Scaling Behavior and Finite-Size Effects
 
-**Author:** Dr. Katharina Jacoby  
-**Date:** March 26, 2026  
-**Status:** Exploratory / Data Record  
-**Affiliation:** Independent Research  
-**Contact:** k.jacoby@posteo.de  
+> **Status:** 🚧 Active Research / Preliminary Findings  
+> **Author:** Dr. Katharina Jacoby  
+> **Date:** April 9, 2026  
 
 ---
 
-### Abstract
+## 📢 Scientific Transparency Note
 
-This manuscript documents a numerical observation regarding the scaling behavior of discrete photonic lattices with anti-periodic boundary conditions ("twists"). Using a discrete Coupled Mode Equation (CME) framework, we simulated two topological configurations: the **Twisted Torus** (single twist) and the **Klein Bottle** (double twist) across a range of lattice sizes.
+This repository documents the **iterative process** of our research. We believe in full transparency regarding how our understanding of these discrete systems has evolved.
 
-The primary observation is a distinct **pattern of convergence**:
-1.  **Finite-Size Anomaly:** At the smallest scales, the system exhibits significant deviation from the scaling trend predicted by continuous theory.
-2.  **Scale-Invariant Plateau:** Beyond a critical resolution threshold, the system settles into a stable regime where the ratio of observed critical curvature to theoretical continuous curvature becomes **constant**, regardless of further increases in lattice size.
-3.  **Topology-Dependent Plateaus:** The two topologies converge to **distinct, topology-specific constant values**, suggesting the correction factor is an intrinsic property of the global boundary condition rather than a numerical artifact.
+1.  **Initial Phase:** Early simulations suggested "perfect" mathematical constants.
+2.  **Re-evaluation:** We discovered these were **numerical artifacts** caused by coarse search grids.
+3.  **Current Phase:** High-resolution analysis has revealed a new scaling law ($\lfloor L/2 \rfloor$ dependence) and a potential universal ratio ($\sqrt{2}$).
 
-This work does not claim to have discovered a universal physical constant. Instead, it highlights a reproducible **behavioral pattern** in discrete systems: a transition from under-resolved instability to scale-invariant stability. The specific magnitude of the plateau depends on simulation parameters, but the **existence of the plateau itself** appears robust.
+**Note on Code:** The source code used to generate these results is proprietary and not included in this repository. However, the **raw data** and **analysis scripts** (Python notebooks for plotting) are provided to allow full reproducibility of the *results*.
+
+---
+
+## 📉 The Journey: From "Perfect" Constants to Grid Artifacts
+
+### Phase 1: The Initial Observation
+Using coarse-resolution linear scans, we initially observed what appeared to be **perfectly constant** correction factors ($\alpha$):
+*   **Klein Bottle:** $\alpha \approx 0.1909859317$ ($3/5\pi$)
+*   **Twisted Torus:** $\alpha \approx 0.1279637733$ ($80/199\pi$)
+
+### Phase 2: The Re-evaluation
+Suspecting these were numerical coincidences, we re-ran simulations with **high-resolution binary search** ($10^{-8}$ tolerance).
+*   **Result:** The "constants" disappeared. The values shifted, and slight drifts appeared.
+*   **Conclusion:** The original values were **grid quantization artifacts**.
+
+| Topology | Coarse-Res $\alpha$ (Artifact) | High-Res $\alpha$ (Corrected) | Shift |
+| :--- | :--- | :--- | :--- |
+| **Klein Bottle** | $\approx 0.19099$ | $\approx 0.17678$ | $+0.0142$ |
+| **Twisted Torus** | $\approx 0.12796$ | $\approx 0.12503$ | $+0.0029$ |
+
+---
+
+## 🔍 Current Hypotheses (High-Res Data)
+
+With artifacts removed, new patterns have emerged:
+
+### 1. The $\lfloor L/2 \rfloor$ Dependence
+The critical curvature $K_c$ scales with **$\lfloor L/2 \rfloor$**, not $L$.
+*   **Evidence:** Adjacent lattice sizes ($L=2,3$) share identical $K_c$ values.
+*   **Implication:** The effective resolution of the twist boundary is half the lattice side length.
+
+### 2. The Universal Ratio
+The ratio of scaling products between topologies converges to **$\approx 1.414$**.
+$$ \frac{(K_c \times \lfloor L/2 \rfloor)_{KB}}{(K_c \times \lfloor L/2 \rfloor)_{Torus}} \approx \sqrt{2} $$
+
+---
+
+## 📂 Data Availability
+
+All raw simulation data is available in the `/data` directory.
+*   `v1_coarse/`: Original data (contains artifacts, for historical reference).
+*   `v2_highres/`: Corrected high-resolution data (current best estimate).
+
+**Reproducibility:**
+The data is provided in standard CSV format. We provide Jupyter notebooks in `/analysis` to reproduce all plots and statistical tests shown in the paper.
+
+---
+
+## 📄 Read the Full Story
+
+*   **[Paper.md](./paper.md)**: The formal manuscript detailing the methodology, data, and conclusions.
+*   **[HISTORY.md](./history.md)**: A detailed timeline of the research evolution and artifact discovery.
+
+---
+
+## 📧 Contact & Collaboration
+
+Interested researchers are welcome to contact me for:
+*   Access to my source codes.
+*   Collaborative verification of the $\sqrt{2}$ hypothesis.
+*   Discussion of analytical derivations.
+
+**Email:** k.jacoby@posteo.de
