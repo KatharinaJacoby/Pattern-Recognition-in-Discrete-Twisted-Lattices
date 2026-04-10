@@ -126,13 +126,7 @@ These findings are presented as descriptive records of numerical behavior. Futur
 
 ## Appendix: Data Availability
 
-Raw simulation data supporting these observations is available in the repository accompanying this manuscript:
-
-**Repository:** https://github.com/KatharinaJacoby/discrete-twisted-lattices-patterns
-
-*   `v2_highres/scaling_results_klein_bottle_highres.csv`
-*   `v2_highres/scaling_results_torus_euclidean_highres.csv`
-*   `v2_highres/scaling_results_torus_manhattan_highres.csv`
+Raw simulation data supporting these observations is available in this repository.
 
 The data is provided in standard CSV format to allow for independent verification of the statistical analysis. Source code is available upon request for collaborative verification.
 
