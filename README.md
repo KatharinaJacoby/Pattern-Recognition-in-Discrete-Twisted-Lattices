@@ -84,14 +84,11 @@ We view this work as a starting point for discussion. We are particularly intere
 *   **Alternative Implementations:** Does this pattern hold for different discretization schemes or metrics?
 *   **Source Code Review:** We are happy to share our simulation scripts with anyone interested in verifying the results or extending the study.
 
-Please feel free to email me at **k.jacoby@posteo.de** to discuss, collaborate, or simply share your thoughts. I'll be updating this README periodically to keep everyone posted on new findings.
+Please feel free to open an issue here in the repo or email me at **k.jacoby at posteo.de** to discuss, collaborate, or simply share your thoughts. I'll be updating this README periodically to keep everyone posted on new findings.
 
 ## 📧 Contact & Collaboration
 
 Interested researchers are welcome to contact me for:
 *   Access to my source codes.
-*   Collaborative verification of the $\sqrt{2}$ hypothesis.
 *   Discussion of analytical derivations.
 *   if you want to cite this paper please go to https://philpeople.org/profiles/katharina-jacoby/publications
-
-**Email:** k.jacoby@posteo.de
