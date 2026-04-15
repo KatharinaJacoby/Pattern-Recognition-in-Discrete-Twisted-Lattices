@@ -13,6 +13,8 @@ Our goal here is **descriptive**: to carefully record numerical observations, do
 
 We believe science thrives on open dialogue. If you spot inconsistencies, have alternative interpretations, or wish to discuss the underlying physics, please reach out. We are happy to share our **source code** and simulation scripts upon request to facilitate independent verification and further exploration.
 
+> **Note on Methodology and Tools**  
+> This paper was assisted by Large Language Models (LLMs). They were used to assist with creating texts, formatting, literature search, verification of mathematical derivations, and scaffold code generation. All conceptual frameworks, ethical arguments, and editorial decisions are my own. In fact trying to use a LLM for formatting and code scaffold- even under strict instructions- is exhausting. The helpful AI assistant constantly swapping my non-binary approach to a smooth binary one which sells or looks good for peer-review has made me questioned my life-choices more than once and says a lot about todays bias in research. The bias of today's LLM is extremely strong and needs constant human intervention.
 ---
 
 ## 📉 The Evolution of Our Understanding
