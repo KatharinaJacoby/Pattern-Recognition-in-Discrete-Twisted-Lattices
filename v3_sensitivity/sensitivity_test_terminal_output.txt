@@ -1,0 +1,16 @@
+SENSITIVITY TEST: Can we stabilize the system?
+--- Testing Mode: LINEAR ---
+N=4, L=2: Min_Rho at K=0 = -0.789203
+  >>> UNSTABLE. System oscillates at K=0.
+N=16, L=4: Min_Rho at K=0 = -0.685126
+  >>> UNSTABLE. System oscillates at K=0.
+N=64, L=8: Min_Rho at K=0 = -0.516337
+  >>> UNSTABLE. System oscillates at K=0.
+
+--- Testing Mode: WEAK_COSINE ---
+N=4, L=2: Min_Rho at K=0 = -0.394602
+  >>> UNSTABLE. System oscillates at K=0.
+N=16, L=4: Min_Rho at K=0 = -0.342563
+  >>> UNSTABLE. System oscillates at K=0.
+N=64, L=8: Min_Rho at K=0 = -0.258169
+  >>> UNSTABLE. System oscillates at K=0.
