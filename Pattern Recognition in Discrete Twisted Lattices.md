@@ -2,7 +2,6 @@
 
 **Author:** Dr. Katharina Jacoby  
 **Date:** Updated: April 18, 2026 
-**Status:** **Update** (See Note Below)
 
 > **⚠️ Important Note on Versions:**  
 > This document has been updated to include the results of a **sensitivity analysis conducted on April 18, 2026**, which falsified the primary "robust" finding of the original April 10 manuscript.  
