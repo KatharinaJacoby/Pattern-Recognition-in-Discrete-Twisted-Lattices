@@ -4,16 +4,12 @@
 **Date:** Updated: April 18, 2026 
 
 > **⚠️ Important Note on Versions:**  
-> This document has been updated to include the results of a **sensitivity analysis conducted on April 18, 2026**, which falsified the primary "robust" finding of the original April 10 manuscript.  
-> *   **Deprecated Version (April 10)
-> *   **Deprecated Version (March 2026)
-> *   **Current Version:** This file. It documents the full evolution of the findings, including the final falsification.
-
+> This document has been updated to include the results of a **sensitivity analysis conducted on April 18, 2026**, the deprecated versions are files under research-journey.
 ---
 
 ## Abstract
 
-This manuscript documents a re-evaluation of numerical scaling behaviors in discrete photonic lattices with anti-periodic boundary conditions ("twists"). In the initial study (March 2026), we noted a transition from finite-size deviation to a stable regime, with apparent "perfect" mathematical constants emerging. However, subsequent high-resolution analysis revealed these constants were artifacts of grid quantization.
+This manuscript documents an evaluation of numerical scaling behaviors in discrete photonic lattices with anti-periodic boundary conditions ("twists"). In the initial study (March 2026), we noted a transition from finite-size deviation to a stable regime, with apparent "perfect" mathematical constants emerging. However, subsequent high-resolution analysis revealed these constants were artifacts of grid quantization.
 
 Furthermore, we identified that the previously reported $\sqrt{2}$ ratio between the Klein Bottle and Twisted Torus topologies was an artifact of comparing different distance metrics (Manhattan for Torus, Euclidean for Klein Bottle). When both topologies are simulated using the **same Euclidean metric**, they converge to the **same** scaling product ($P \approx 1.11072$).
 
@@ -21,7 +17,7 @@ The primary observation in the high-resolution data was a step-wise dependence o
 
 **However, subsequent sensitivity analysis (April 18, 2026) has revealed that this dependence is conditional.** When the hard, discontinuous boundary condition (instant sign flip) was replaced with smooth alternatives (linear ramp or cosine phase factor), the system became immediately oscillatory at $K=0$, and the $\lfloor L/2 \rfloor$ scaling pattern vanished entirely. This indicates that the observed scaling law is not a fundamental property of the discrete lattice, but a numerical artifact arising specifically from the interaction between the grid and the sharp discontinuity of the boundary condition.
 
-These findings are presented as descriptive numerical observations specific to the Discrete Coupled Mode Equation (CME) framework. The study underscores the necessity of distinguishing between physical laws and methodological artifacts in computational topology. Full data, code, and the detailed falsification analysis are available in this repository.
+These findings are presented as descriptive numerical observations specific to the Discrete Coupled Mode Equation (CME) framework. The study underscores the necessity of distinguishing between physical laws and methodological artifacts in computational topology. Full data and the detailed falsification analysis are available in this repository.
 
 ---
 
@@ -102,7 +98,7 @@ To determine if the $\lfloor L/2 \rfloor$ dependence was a fundamental property 
 
 **Result:** In both smooth variants, the system became **immediately oscillatory** ($\rho < 0$) at $K=0$ for all lattice sizes ($L=2$ to $32$). No critical curvature $K_c$ could be defined. The $\lfloor L/2 \rfloor$ pattern vanished entirely.
 
-**Conclusion:** The "robust" scaling law observed in Sections 3.1–3.3 is **not a fundamental property** of the discrete lattice. It is a **numerical artifact** arising specifically from the interaction between the grid and the sharp discontinuity of the hard boundary condition. When the boundary is smoothed, the system loses its stable phase, and the pattern disappears.
+**Conclusion:** The "robust" scaling pattern observed in Sections 3.1–3.3 is **not a fundamental property** of the discrete lattice. It is a **numerical artifact** arising specifically from the interaction between the grid and the sharp discontinuity of the hard boundary condition. When the boundary is smoothed, the system loses its stable phase, and the pattern disappears.
 
 ---
 
@@ -145,5 +141,3 @@ Raw simulation data supporting these observations is available in the repository
 *   `/data/v3_sensitivity/`: Sensitivity analysis data (April 18, 2026).
 
 The data is provided in standard CSV format to allow for independent verification of the statistical analysis. Source code is available upon request for collaborative verification.
-
-**Contact:** k.jacoby@posteo.de
