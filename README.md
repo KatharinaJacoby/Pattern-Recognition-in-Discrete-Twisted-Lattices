@@ -93,7 +93,11 @@ All raw simulation data is available in the `/data` directory for independent in
     *   `scaling_results_torus_smooth_euclidean.csv`: Smooth Cosine Twist results (all $K_c = 0$; system unstable at $K=0$).
     *   `sensitivity_test_terminal_output.txt`: Terminal output from the Linear Ramp and Weak Cosine tests.
 
-**Scripts (Available on Request):**
+**Scripts:**
+*   **Sensitivity & Falsification Scripts (Update from April 18, 2026) are in the v3_sensitivity folder:**
+    *   `smooth_twist_test.py`: Main test replacing the hard twist with a smooth cosine phase factor (Euclidean metric). Generates `scaling_results_torus_smooth_euclidean.csv`.
+    *   `smooth_twist_sensitivity_test.py`: Comprehensive sensitivity analysis testing Linear Ramp and Weak Cosine twist variants to confirm system instability at K=0.
+
 To ensure full reproducibility, the following Python scripts are available. Please email `k.jacoby at posteo de` to request access.
 
 *   **Core Simulation Scripts:**
@@ -101,10 +105,6 @@ To ensure full reproducibility, the following Python scripts are available. Plea
     *   `scaling_results_klein_bottle.py`: Original Klein Bottle simulation (Euclidean metric, coarse scan). *Historical reference only.*
     *   `scaling_results_torus_high_resolution.py`: High-resolution Twisted Torus simulation (supports both Manhattan and Euclidean metrics, binary search).
     *   `scaling_results_klein_bottle_highres.py`: High-resolution Klein Bottle simulation (Euclidean metric, binary search, extended to N=1024).
-
-*   **Sensitivity & Falsification Scripts (New - April 2026):**
-    *   `smooth_twist_test.py`: Main test replacing the hard twist with a smooth cosine phase factor (Euclidean metric). Generates `scaling_results_torus_smooth_euclidean.csv`.
-    *   `smooth_twist_sensitivity_test.py`: Comprehensive sensitivity analysis testing Linear Ramp and Weak Cosine twist variants to confirm system instability at K=0.
 
 
 **Reproducibility:**
@@ -132,6 +132,6 @@ Please feel free to open an issue here in the repo or email me at **k.jacoby at 
 ## 📧 Contact & Collaboration
 
 Interested researchers are welcome to contact me for:
-*   Access to my source codes (including the sensitivity test scripts).
+*   Access to further source codes (the sensitivity test scripts are in the v3_sensitivity folder).
 *   Discussion of analytical derivations.
 *   If you want to cite this paper, please go to https://philpeople.org/profiles/katharina-jacoby/publications
