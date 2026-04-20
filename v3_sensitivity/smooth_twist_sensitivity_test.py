@@ -40,11 +40,6 @@ def calculate_distance_and_twist(coords, side, metric_type="euclidean", twist_mo
             D[i, j] = D[j, i] = dist
             
             # --- TWIST LOGIC ---
-            if twist_mode == "linear":
-                pass 
-            
-            if twist_mode == "linear":
-                pass
             
             if twist_mode == "linear":
                 if dx_direct < side / 2.0:
