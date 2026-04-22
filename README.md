@@ -8,8 +8,7 @@
 
 Welcome! This repository documents an ongoing, iterative journey into the scaling behavior of discrete photonic lattices with anti-periodic boundary conditions. 
 
-### Thanks on the massive engagement with my repos! You have cloned over 600 times my **Pattern Recognition in Discrete Twisted Lattices Repository** in the last 14 days. Big shout out to the community! ✊🏽
-
+In just 14 days, the Pattern Recognition in Discrete Twisted Lattices repo alone has received over 300 unique clones. Thanks on the massive engagement with my repos! ✊🏽
 
 Our goal here is **descriptive**: to carefully record numerical observations, document the evolution of our understanding, and share data that others might find useful. We enjoy finding reproducible patterns in specific discrete systems.
 
