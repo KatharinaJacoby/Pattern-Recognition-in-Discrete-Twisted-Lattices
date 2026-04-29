@@ -1,14 +1,14 @@
 # Pattern Recognition in Discrete Twisted Lattices
 
 > **Author:** Dr. Katharina Jacoby  
-> **Date:** April 10, 2026 (Updated: April 18, 2026)  
+> **Date:** Updated: April 29, 2026
 ---
 
 ## 🤝 A Note on Collaboration & Transparency
 
 Welcome! This repository documents an ongoing, iterative journey into the scaling behavior of discrete photonic lattices with anti-periodic boundary conditions. 
 
-In just 14 days, the Pattern Recognition in Discrete Twisted Lattices repo alone has received over 300 unique clones. Thanks on the massive engagement with my repos! ✊🏽
+In the first 14 days, the Pattern Recognition in Discrete Twisted Lattices repo alone has received over 300 unique clones and keeps steady above 300. Thanks on the massive engagement with my repos! ✊🏽
 
 Our goal here is **descriptive**: to carefully record numerical observations, document the evolution of our understanding, and share data that others might find useful. We enjoy finding reproducible patterns in specific discrete systems.
 
@@ -61,11 +61,29 @@ To confirm this wasn't an artifact of the specific cosine function, we tested tw
 
 **Conclusion:** The $\lfloor L/2 \rfloor$ scaling pattern is **not a universal law** of discrete lattices. It is a direct consequence of the **hard, discontinuous boundary condition**. The pattern vanishes entirely when the boundary is smoothed, regardless of the smoothing function or its amplitude. The pattern exists only because the Hard system has a stable phase to transition from. The Smooth system has no stable phase, so the pattern vanishes.
 
+### Phase 5: Extended Scale Observations ($L=128$)
+*Date: April 29, 2026*
+
+We have extended the high-resolution simulations for the **Twisted Torus** (Euclidean metric) up to **$L=128$** ($N=16,384$) and compared the results with the previously extended **Klein Bottle** data.
+
+**Descriptive Observations:**
+*   **Consistency Across Topologies:** Within the **CME implementation** used here, the scaling product $P = K_c \times \lfloor L/2 \rfloor$ remains stable at approximately **$1.11072$** for both the Twisted Torus and the Klein Bottle up to the maximum tested scale ($L=128$).
+*   **Persistence of Pattern:** The $\lfloor L/2 \rfloor$ dependence on critical curvature $K_c$ continues to hold with high numerical precision ($10^{-8}$) across the extended range. No deviation from this trend was observed in the current dataset.
+
+
+**Data Availability:**
+The raw data for these extended runs is available in `/data/v2_highres/`:
+*   `scaling_results_klein_bottle_extended_highres.csv`
+*   `scaling_results_torus_extended_highres.csv`
+
+**Current Status:**
+The data confirms that, **under the specific conditions of this CME implementation** (hard boundary, Euclidean metric), the scaling behavior is consistent across both topologies up to $L=128$. Whether this constant is a universal feature of discrete twisted lattices or specific to this numerical scheme remains an open question. Analytical derivation is required to determine the underlying mechanism.
+
 ---
 
 ## 🔍 Current Observations (High-Resolution Data, Hard Twist)
 
-Based on the latest high-resolution runs (up to $N=1024$) with **Hard Twist** conditions:
+Based on the latest high-resolution runs (up to $N=16384$, $L=128$) with **Hard Twist** conditions:
 
 ### 1. The $\lfloor L/2 \rfloor$ Dependence (Conditional)
 The critical curvature $K_c$ appears to scale with **$\lfloor L/2 \rfloor$** (the integer floor of half the lattice side), rather than the full side length $L$.
@@ -89,7 +107,9 @@ All raw simulation data is available in the `/data` directory for independent in
 *   `v1_coarse/`: Original data (contains grid artifacts; useful for historical context).
 *   `v2_highres/`: Current best estimates using binary search ($10^{-8}$ tolerance).
     *   `scaling_results_klein_bottle_highres.csv`: Klein Bottle (Euclidean).
+    *   `scaling_results_klein_bottle_extended_highres.csv`: Klein Bottle (Euclidean), extended to $L=128$.
     *   `scaling_results_torus_euclidean_highres.csv`: Twisted Torus (Euclidean) – *Recommended for direct comparison.*
+    *   `scaling_results_torus_extended_highres.csv`: Twisted Torus (Euclidean), extended to $L=128$.
     *   `scaling_results_torus_manhattan_highres.csv`: Twisted Torus (Manhattan) – *For metric sensitivity analysis.*
 *   `v3_sensitivity/`: Smooth Twist sensitivity analysis (April 18, 2026).
     *   `scaling_results_torus_smooth_euclidean.csv`: Smooth Cosine Twist results (all $K_c = 0$; system unstable at $K=0$).
@@ -127,7 +147,7 @@ Data is provided in standard CSV format. You can load these files in any data an
 We view this work as a starting point for discussion. We are particularly interested in:
 *   **Analytical Derivations:** Can anyone derive the $\lfloor L/2 \rfloor$ dependence specifically for **discontinuous** boundary conditions?
 *   **Physical Interpretation:** What does the immediate instability under smooth twists imply for the physical modeling of anti-periodic systems? Is the hard twist a necessary idealization, or does it mask a deeper problem with the CME framework?
-*   **Source Code Review:** We are happy to share our simulation scripts (including the smooth twist variants) with anyone interested in verifying the results or extending the study.
+*   **Source Code Review:** We are happy to share our simulation scripts with anyone interested in verifying the results or extending the study.
 
 Please feel free to open an issue here in the repo or email me at **k.jacoby at posteo.de** to discuss, collaborate, or simply share your thoughts. I'll be updating this README periodically to keep everyone posted on new findings.
 
