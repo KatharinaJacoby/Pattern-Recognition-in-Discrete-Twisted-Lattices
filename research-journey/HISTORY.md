@@ -30,15 +30,21 @@ Welcome to the evolving story of this project. This document tracks our journey 
 - **The Falsification:** The "robust" law was not a universal truth. It was a **numerical artifact** arising specifically from the interaction between the discrete grid and the sharp discontinuity of the hard boundary.
 - **The Lesson:** Observed scaling laws in discrete systems can be transient methodological artifacts. Distinguishing between physical laws and implementation artifacts is the core challenge of computational topology.
 
+### April 29, 2026: Extended Scale Validation ($L=128$)
+- **The Goal:** To test the stability of the scaling product $P$ and the $\lfloor L/2 \rfloor$ pattern at significantly larger scales, pushing the limits of the current implementation.
+- **What we did:** Extended high-resolution simulations for both the Twisted Torus and Klein Bottle (Euclidean metric) up to **$L=128$** ($N=16,384$).
+- **The Result:**
+  - The scaling product $P \approx 1.11072$ remained **stable** for both topologies up to the maximum tested scale.
+  - The $\lfloor L/2 \rfloor$ dependence held with high numerical precision ($10^{-8}$).
+  - **Computational Reality:** Runtime increased non-linearly, with the $L=128$ run taking approximately **4,100 seconds** (~1.1 hours).
+- **The Current Status:** Within the **specific CME implementation** used here, the scaling behavior is consistent across both topologies up to $L=128$. However, whether this constant is a universal feature of discrete twisted lattices or specific to this numerical scheme remains an open question.
+- **The Next Step:** Analytical derivation is required to determine the underlying mechanism. Further empirical expansion (e.g., $L=256$) is currently limited by computational cost.
+
 ---
 
 ## 📂 Current Status
-The project is now in a phase of **live, ongoing research**. We are investigating:
-1. The analytical basis for why hard boundaries create this specific artifact.
-2. Whether other discretization schemes exhibit similar "phantom" laws.
-3. The implications of immediate instability in smooth systems for broader field theories.
-
-**Full data and the detailed falsification analysis are available in the repository.**
+The project is in a phase of **ongoing research**.
+**Full data (including extended runs to $L=128$) and the detailed falsification analysis are available in the repository.**
 
 ---
 
