@@ -10,7 +10,6 @@ Variants Tested:
 """
 
 import numpy as np
-import pandas as pd
 import time
 
 def calculate_distance_and_twist(coords, side, metric_type="euclidean", twist_mode="linear"):
